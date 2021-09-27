@@ -52,36 +52,9 @@ layout: default2.1
       </a>
       {% endfor %}
     </ul>
-      <!-- <a href="#top" class="btn btn-primary btn-sm">
-        <i class="bi bi-folder-fill"></i> Go back to the top
-      </a>  -->
       <a href="#top" style="display: block; text-align: right;">back to top &#x2191;</a> 
-      {% if forloop.last %}
-          <!-- Last! -->
-      {% else %}
-        <hr/>
-      {% endif %}
+      {% unless forloop.last %}<hr>{% endunless %}
   {% endfor %}
 </div>
 
-<!-- <div id="archives">
-  {% for category in site.categories %}
-    <div class="archive-group">
-      {% capture category_name %}{{ category | first }}{% endcapture %}
-      <div id="#{{ category_name | slugize }}"></div>
-      <h3 class="category-head">{{ category_name }}</h3>
-      <a name="{{ category_name | slugize }}"></a>
-      {% for post in site.categories[category_name] %}
-      <article class="archive-item">
-        <h4>
-            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
-        </h4>
-      </article>
-      {% endfor %}
-    </div>
-  {% endfor %}
-</div> -->
-
 <br>
-<!-- <a class="btn btn-primary btn-sm text-white justify-content-center" style="line-height: 0rem; text-align: center; display: block; margin: 0 auto; width: 14rem;" href="{{ "/blog/" | prepend: site.url }}">Main</a> -->
-<!-- <br> -->
