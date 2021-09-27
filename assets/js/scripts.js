@@ -136,6 +136,15 @@ function topFunction() {
 }
 // SCROLL TO TOP BUTTON END
 
+var divId;
+
+$('.nav-link').click(function(){    
+  divId = $(this).attr('href');
+   $('html, body').animate({
+    scrollTop: $(divId).offset().top - 72
+  }, 100);
+});
+
 (function ($) {
     "use strict"; // Start of use strict
 

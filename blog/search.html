@@ -43,6 +43,6 @@ layout: default2.1
     resultsContainer: document.getElementById('results-container'),
     json: '{{site.url}}/search.json',
     // searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
-    searchResultTemplate: '<li class="search-title aigelist-blue" title="{title}" alt="{title}"><a class="search-subtitle" href="{{site.url}}{url}">{title}</a><br><small class="search-meta"><i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i> {date} &nbsp;&nbsp; <i class="bi bi-folder-fill" title="Category" alt="Category"></i> {category} &nbsp;&nbsp; <i class="bi bi-tag-fill" title="Tags" alt="Tags"></i> {tags}</small></li>'
+    searchResultTemplate: '<li class="search-title aigelist-blue" title="{title}" alt="{title}"><a class="search-subtitle aigelist-blue" href="{{site.url}}{url}" style="font-weight: bold;">{title}</a><br><p class="search-meta"><i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i> {date} &nbsp;&nbsp; <i class="bi bi-person-square" title="Authors" alt="Author"></i> {authors}<br><i class="bi bi-folder-fill" title="Category" alt="Category"></i> {category} &nbsp;&nbsp; <i class="bi bi-tag-fill" title="Tags" alt="Tags"></i> {tags}</p></li>'
   })
 </script>

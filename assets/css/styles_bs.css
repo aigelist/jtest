@@ -15626,8 +15626,17 @@ div.inner-customization {
 .search-meta {
   padding: 0px;
   font-style: italic;
+  font-size: 0.85rem;
+  color: #62A2C4 !important;
 }
 
 #results-container {
   margin-bottom: 2.5rem;
 }
+
+/* a.anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+} */

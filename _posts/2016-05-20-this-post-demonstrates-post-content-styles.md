@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "This post demonstrates post content styles"
-category: junk
 author:
 - Bart Simpson
 - Nelson Mandela Muntz
+category: junk
+tags: [ cartoon, simpsons ]
 meta: "Springfield"
 ---
 

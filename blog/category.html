@@ -24,18 +24,16 @@ layout: default2.1
 
 <h3 class="mt-auto aigelist-blue articles-section-subheader justify-content-center" style="padding-top: 0px; text-align: center;">Categories</h3>
 
-<nav class="mt-auto blog-tags" aria-label="blog">
-  <ul class="pagination justify-content-center">
-  {% assign tags = site.categories | sort %}
-  {% for tag in tags %}
-    <li class="page-item" style="width: 175px;">
-      <a class="page-link" href="#{{ tag[0] | slugify }}">
-        <i class="bi bi-folder-fill"></i> {{ tag[0] | capitalize }} [ {{ tag | last | size }} ]
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
-</nav>
+<ul class="nav justify-content-center">
+{% assign tags = site.categories | sort %}
+{% for tag in tags %}
+  <li class="nav-item">
+    <a class="nav-link" href="#{{ tag[0] | slugify }}">
+      <i class="bi bi-folder-fill"></i> {{ tag[0] | capitalize }} [ {{ tag | last | size }} ]
+    </a>
+  </li>
+{% endfor %}
+</ul>
 
 <hr/>
 
@@ -43,7 +41,7 @@ layout: default2.1
   {% assign tags = site.categories | sort %}
 
   {% for tag in tags %} 
-    <h3 class="aigelist-blue articles-section-subheader" id="{{ tag[0] | slugify }}" style="padding-top: 0px;"> {{ tag[0] | capitalize }} [ {{ tag | last | size }} ]</h3>
+    <h3 class="anchor aigelist-blue articles-section-subheader" id="{{ tag[0] | slugify }}" style="padding-top: 0px;"> {{ tag[0] | capitalize }} [ {{ tag | last | size }} ]</h3>
     <ul class="later on">
       {% for post in tag[1] %}
         <a class="post-subtitle" href="{{ site.url }}{{ post.url }}">

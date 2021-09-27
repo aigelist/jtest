@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "This post demonstrates post content styles"
-tags:
-- tagger1
-- tagger2
-category: junk
 author:
 - Bart Simpson
 - Nelson Mandela Muntz
+category: junk
+tags:
+- tagger1
+- tagger2
 meta: "Springfield"
 ---
 
