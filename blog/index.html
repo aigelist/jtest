@@ -26,16 +26,33 @@ layout: default2.1
 {% endfor %} -->
 
 {%- assign date_format = site.minima.date_format | default: "%a, %b %-d, %Y" -%}
-<h2 class="text-center aigelist-blue articles-section-header" style="font-weight: bold">Articles</h2>
+<h2 class="text-center aigelist-blue articles-section-header"><i class="bi bi-newspaper" title="Article" alt="Article"></i> Articles by Date</h2>
 
-<!-- All Posts | Categories | Tags | List by Date -->
-<a href="{{ '/blog/category.html' | prepend: site.url }}">Category</a>
+<!-- All Posts by Date | Categories | Tags -->
+<nav class="mt-auto" aria-label="blog">
+  <ul class="pagination justify-content-center">
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link blog-classify-active" href="{{ '/blog' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i> Date</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog/category.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-folder-fill" title="Category" alt="Category"></i> Category</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog/tag.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-tag-fill" title="Tags" alt="Tags"></i> Tag</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+        <a class="page-link" href="{{ '/blog/search.html' | prepend: site.url }}"><i class="bi bi-search" title="Search" alt="Search"></i> Search <i class="bi bi-newspaper" title="Articles" alt="Articles"></i></a>
+    </li>
+  </ul>
+</nav>
+
+<hr>
 
 {% for post in paginator.posts %}
 <article class="blog-post">
   <h3 class="blog-post-title"><a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></h3>
   <p class="blog-post-meta">
-      <i class="bi bi-calendar3" title="Posted" alt="Posted"></i>
+      <i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i>
       {{ post.date | date: date_format }}&nbsp;
       <!-- @ {{ post.time }}  -->
       {%- if post.author -%}
@@ -93,7 +110,7 @@ layout: default2.1
   </p>
   <p class="blog-post-content">
     <!-- {{ post.excerpt }} -->
-    {{ post.excerpt }}
+    {{ post.excerpt }} <a href="{{ post.url | prepend: site.url }}" style="font-weight: bold; font-style: italic;">Read more...</a>
   </p>
 </article>
 {% endfor %}
@@ -144,7 +161,7 @@ layout: default2.1
 </nav>
 
 
-<div class="tags-expo">
+<!-- <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.categories %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
@@ -171,7 +188,8 @@ layout: default2.1
 <div class="blog-tags"> 
   {% assign tags = site.categories | sort %}
   {% for tag in tags %}
-  <a href="#{{ tag[0] | slugify }}" class="btn btn-default" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%"> <!-- style="color: #1C1C1C;" is font color of cloud index -->
+  <a href="#{{ tag[0] | slugify }}" class="btn btn-default" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+                  style="color: #1C1C1C;" is font color of cloud index
     <span class="fa fa-folder-open" aria-hidden="true"> 
       {{ tag[0] }} <i class="badge">{{ tag | last | size }}</i>
     </span>
@@ -197,4 +215,4 @@ layout: default2.1
       </a> 
       <hr/>
   {% endfor %}
-</div>
+</div> -->

@@ -1,0 +1,89 @@
+---
+layout: default2.1
+---
+
+{%- assign date_format = site.minima.date_format | default: "%a, %b %-d, %Y" -%}
+<h2 class="text-center aigelist-blue articles-section-header"><i class="bi bi-newspaper" title="Article" alt="Article"></i> Articles by Tags</h2>
+
+<nav class="mt-auto" aria-label="blog">
+  <ul class="pagination justify-content-center">
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i> Date</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog/category.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-folder-fill" title="Category" alt="Category"></i> Category</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link blog-classify-active" href="{{ '/blog/tag.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-tag-fill" title="Tags" alt="Tags"></i> Tag</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+        <a class="page-link" href="{{ '/blog/search.html' | prepend: site.url }}"><i class="bi bi-search" title="Search" alt="Search"></i> Search <i class="bi bi-newspaper" title="Articles" alt="Articles"></i></a>
+    </li>
+  </ul>
+</nav>
+
+<h3 class="mt-auto aigelist-blue articles-section-subheader justify-content-center" style="padding-top: 0px; text-align: center;">Tags</h3>
+
+<nav class="mt-auto blog-tags" aria-label="blog">
+  <ul class="pagination justify-content-center">
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+    <li class="page-item" style="width: 175px;">
+      <a class="page-link" href="#{{ tag[0] | slugify }}">
+        <i class="bi bi-tag-fill"></i> {{ tag[0] | capitalize }} [ {{ tag | last | size }} ]
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</nav>
+
+<hr/>
+
+<div class="post-preview"> 
+    {% assign tags = site.tags | sort %}
+  
+    {% for tag in tags %} 
+      <h3 class="aigelist-blue articles-section-subheader" id="{{ tag[0] | slugify }}" style="padding-top: 0px;"> {{ tag[0] | capitalize }} [ {{ tag | last | size }} ]</h3>
+      <ul class="later on">
+        {% for post in tag[1] %}
+          <a class="post-subtitle" href="{{ site.baseurl }}{{ post.url }}">
+        <li title="{{post.title}}" alt="{{post.title}}">
+          {{ post.title | truncatewords: 7 }}
+        <small class="post-meta"> [ Posted on {{ post.date | date: "%B %-d, %Y" }} ]</small>
+        </li>
+        </a>
+        {% endfor %}
+      </ul>
+        <!-- <a href="#top" class="btn btn-primary btn-sm">
+          <i class="bi bi-folder-fill"></i> Go back to the top
+        </a>  -->
+        <a href="#top" style="display: block; text-align: right;">back to top &#x2191;</a> 
+        {% if forloop.last %}
+            <!-- Last! -->
+        {% else %}
+          <hr/>
+        {% endif %}
+    {% endfor %}
+  </div>
+
+<!-- <div id="post-preview">
+  {% for tag in site.tags %}
+    <div class="archive-group">
+      {% capture tag_name %}{{ tag | first }}{% endcapture %}
+      <div id="#{{ tag_name | slugize }}"></div>
+      <h3 class="category-head">{{ tag_name }}</h3>
+      <a name="{{ tag_name | slugize }}"></a>
+      {% for post in site.tags[tag_name] %}
+      <article class="archive-item">
+        <h4>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+        </h4>
+      </article>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div> -->
+
+<br>
+<!-- <a class="btn btn-primary btn-sm text-white justify-content-center" style="line-height: 0rem; text-align: center; display: block; margin: 0 auto; width: 14rem;" href="{{ "/blog/" | prepend: site.url }}">Main</a> -->
+<!-- <br> -->

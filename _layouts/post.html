@@ -2,9 +2,26 @@
 layout: default2.1
 ---
 <!-- <h2 class="blog-post-title">{{ page.title | escape }}</h2> -->
-<h2 class="text-center aigelist-blue articles-section-header" style="font-weight: bold">{{ page.title | escape }}</h2>
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<h2 class="text-center aigelist-blue articles-section-header"><i class="bi bi-journal-text" title="Article" alt="Article"></i> {{ page.title | escape }}</h2>
 
+<nav class="mt-auto" aria-label="blog">
+  <ul class="pagination justify-content-center">
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i> Date</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog/category.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-folder-fill" title="Category" alt="Category"></i> Category</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog/tag.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-tag-fill" title="Tags" alt="Tags"></i> Tag</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog/search.html' | prepend: site.url }}"><i class="bi bi-search" title="Search" alt="Search"></i> all <i class="bi bi-newspaper" title="Articles" alt="Articles"></i> Articles</a>
+      </li>
+  </ul>
+</nav>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <!-- <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }} MEH</h1> -->
     <!-- <p class="post-meta">
@@ -26,7 +43,9 @@ layout: default2.1
     </p> -->
 
     {%- assign date_format = site.minima.date_format | default: "%a, %b %-d, %Y" -%}
-    <!-- <h2 class="blog-post-title">{{ page.title | escape }}</h2> -->
+    <a class="nav-item" onclick="window.history.back()">
+      <h3 class="nav-link blog-post-history">&#x2190; Back</h3>
+    </a>
     <p class="blog-post-meta">
         <i class="bi bi-calendar3" title="Posted" alt="Posted"></i>
         {{ page.date | date: date_format }}&nbsp;
@@ -107,7 +126,8 @@ layout: default2.1
     <br>
     <br>
     <!-- <a class="btn btn-primary btn-sm justify-content-center" style="line-height: 0rem; text-align: center; display: block; margin: 0 auto; width: 14rem;" onclick="window.history.back()">Back</a> -->
-    <a class="btn btn-primary btn-sm text-white justify-content-center" style="line-height: 0rem; text-align: center; display: block; margin: 0 auto; width: 14rem;" href="{{ "/blog/" | prepend: site.url }}">Main</a>
+    <!-- <a class="btn btn-primary btn-sm text-white justify-content-center" style="line-height: 0rem; text-align: center; display: block; margin: 0 auto; width: 14rem;" href="{{ "/blog/" | prepend: site.url }}">All posts</a> -->
+
   </article>
 
   {%- if site.disqus.shortname -%}

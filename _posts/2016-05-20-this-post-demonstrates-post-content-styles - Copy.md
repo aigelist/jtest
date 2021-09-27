@@ -4,7 +4,7 @@ title: "This post demonstrates post content styles"
 tags:
 - tagger1
 - tagger2
-category: JUNK
+category: junk
 author:
 - Bart Simpson
 - Nelson Mandela Muntz

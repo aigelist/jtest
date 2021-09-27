@@ -1,0 +1,48 @@
+---
+layout: default2.1
+---
+
+{%- assign date_format = site.minima.date_format | default: "%a, %b %-d, %Y" -%}
+<h2 class="text-center aigelist-blue articles-section-header"><i class="bi bi-search" title="Search" alt="Search"></i> Search Articles...</h2>
+
+<!-- All Posts by Date | Categories | Tags -->
+<nav class="mt-auto" aria-label="blog">
+  <ul class="pagination justify-content-center">
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i> Date</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog/category.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-folder-fill" title="Category" alt="Category"></i> Category</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link" href="{{ '/blog/tag.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-tag-fill" title="Tags" alt="Tags"></i> Tag</a>
+      </li>
+      <li class="page-item" style="width: 175px;">
+          <a class="page-link blog-classify-active" href="{{ '/blog/search.html' | prepend: site.url }}"><i class="bi bi-search" title="Search" alt="Search"></i> Search <i class="bi bi-newspaper" title="Articles" alt="Articles"></i></a>
+      </li>
+  </ul>
+</nav>
+
+<!-- HTML elements for search -->
+<div class="input-group mb-3">
+    <input type="text" class="form-control" id="search-input" placeholder="Search articles.." aria-label="Recipient's username" aria-describedby="button-addon2">
+</div>
+
+<h3 class="aigelist-blue articles-section-subheader" id="results" style="padding-top: 0px;"> Search Results </h3>
+
+<hr>
+
+<ul id="results-container"></ul>
+
+<!-- or without installing anything -->
+<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+
+<script>
+  var sjs = SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    // searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
+    searchResultTemplate: '<li class="search-title aigelist-blue" title="{title}" alt="{title}"><a class="search-subtitle" href="{{site.url}}{url}">{title}</a><br><small class="search-meta"><i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i> {date} &nbsp;&nbsp; <i class="bi bi-folder-fill" title="Category" alt="Category"></i> {category} &nbsp;&nbsp; <i class="bi bi-tag-fill" title="Tags" alt="Tags"></i> {tags}</small></li>'
+  })
+</script>
