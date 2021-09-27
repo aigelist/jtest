@@ -106,13 +106,14 @@ layout: default2.1
           {% endif %}
         {% endfor %}
       {% endif %}
-
   </p>
   <p class="blog-post-content">
     <!-- {{ post.excerpt }} -->
     {{ post.excerpt }} <a href="{{ post.url | prepend: site.url }}" style="font-weight: bold; font-style: italic;">Read more...</a>
   </p>
 </article>
+
+{% unless forloop.last %}<hr>{% endunless %}
 {% endfor %}
 
 

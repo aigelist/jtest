@@ -15450,7 +15450,8 @@ div.inner-customization {
 
 .blog-post {
   color: #006FA9;
-  margin-bottom: 3.5rem;
+  /* margin-bottom: 3.5rem; */
+  margin-bottom: 1.5rem;
 }
 
 .blog-post-title {
@@ -15625,4 +15626,8 @@ div.inner-customization {
 .search-meta {
   padding: 0px;
   font-style: italic;
+}
+
+#results-container {
+  margin-bottom: 2.5rem;
 }
