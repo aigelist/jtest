@@ -46,7 +46,7 @@ layout: default2.1
       <h3 class="aigelist-blue articles-section-subheader" id="{{ tag[0] | slugify }}" style="padding-top: 0px;"> {{ tag[0] | capitalize }} [ {{ tag | last | size }} ]</h3>
       <ul class="later on">
         {% for post in tag[1] %}
-          <a class="post-subtitle" href="{{ site.baseurl }}{{ post.url }}">
+          <a class="post-subtitle" href="{{ site.url }}{{ post.url }}">
         <li title="{{post.title}}" alt="{{post.title}}">
           {{ post.title | truncatewords: 7 }}
         <small class="post-meta"> [ Posted on {{ post.date | date: "%B %-d, %Y" }} ]</small>
