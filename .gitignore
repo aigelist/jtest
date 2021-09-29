@@ -5,3 +5,7 @@ _site
 vendor
 ga.md
 tl.md
+dist
+about.nowdkram
+_layouts/default2.1.html
+_layouts/home.html.old
