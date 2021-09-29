@@ -3,10 +3,10 @@
     * Copyright 2013-2021 Start Bootstrap
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
     */
-    var markerPopUp = "<b>Aigelist</b>";
+var markerPopUp = "<b>Aigelist</b>";
 var geoLoc = [-33.8246648, 151.1975407];
-var markerIcon = '{{ "/assets/img/20201219-Aigelist-Map-Marker.svg" | prepend: site.url }}';
-var markerIconShadow = '{{ "/assets/img/20201219-Aigelist-Map-Marker.svg" | prepend: site.url }}';
+var markerIcon = "./assets/img/20201219-Aigelist-Map-Marker.svg";
+var markerIconShadow = "./assets/img/20201219-Aigelist-Map-Marker.svg";
 var geoRadiusColor = '#006fa9';
 var geoRadiusColorFill = '#006fa9';
 var geoRadiusColorFillOpacity = 0.25;
