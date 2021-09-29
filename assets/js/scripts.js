@@ -115,36 +115,7 @@ function clearPN() {
 //   myInput.focus()
 // })
 
-// SCROLL TO TOP BUTTON START
-var mybutton = document.getElementById("btnTop");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-// SCROLL TO TOP BUTTON END
-
-var divId;
-
-$('.nav-link').click(function(){    
-  divId = $(this).attr('href');
-   $('html, body').animate({
-    scrollTop: $(divId).offset().top - 72
-  }, 100);
-});
-
+// SCROLLSPY
 (function ($) {
     "use strict"; // Start of use strict
 
@@ -204,4 +175,35 @@ $('.nav-link').click(function(){
     //   /* wrap: true */
     // })
 
+    // BLOG NAV LINK MINUS TOP NAVBAR
+    var divId;
+
+    $('.nav-link-blog').click(function(){
+    divId = $(this).attr('href');
+    $('html, body').animate({
+        scrollTop: $(divId).offset().top - 72
+    }, 100);
+    });
+
 })(jQuery); // End of use strict
+
+// SCROLL TO TOP BUTTON START
+var mybutton = document.getElementById("btnTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+// SCROLL TO TOP BUTTON END

@@ -1,0 +1,24 @@
+- header: Artefact X Head
+  title: Artefact X
+  description: This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+  type: docx | xlsx | pdf | zip | webp | png |jpg
+  link: /artefacts/artefact_analytics.zip
+  icon-link: /assets/icons/analytics_v2.2.svg#analytics
+  icon-alt: analytics
+  tags: robotics, workflow, ml/dl, ocr, data, best-practice, finance, IT
+- header: Artefact Y Head
+  title: Artefact Y
+  description: This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+  type: docx | xlsx | pdf | zip | webp | png |jpg
+  link: ""
+  icon-link: /assets/icons/advisory.svg#advisory
+  icon-alt: advisory
+  tags: robotics, workflow, ml/dl, ocr, data, best-practice, finance, IT
+- header: Artefact Z Head
+  title: Artefact Z
+  description: This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+  type: docx | xlsx | pdf | zip | webp | png |jpg
+  link: /artefacts/artefact_customization.zip
+  icon-link: /assets/icons/customization.svg#customization
+  icon-alt: customization
+  tags: robotics, workflow, ml/dl, ocr, data, best-practice, finance, IT

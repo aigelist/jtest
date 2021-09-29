@@ -5,4 +5,3 @@
 layout: home
 ---
 
-gimme a little something something

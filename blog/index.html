@@ -1,5 +1,5 @@
 ---
-layout: default2.1
+layout: default2.2
 ---
 
 {%- assign date_format = site.minima.date_format | default: "%a, %b %-d, %Y" -%}
@@ -9,7 +9,7 @@ layout: default2.1
 <nav class="mt-auto" aria-label="blog">
   <ul class="pagination justify-content-center">
       <li class="page-item">
-          <a class="page-link blog-classify-active" href="{{ '/blog' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i></a>
+          <a class="page-link blog-classify-active" href="{{ '/blog' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-calendar-date" title="Date Posted" alt="Date Posted"></i></a>
       </li>
       <li class="page-item">
           <a class="page-link" href="{{ '/blog/category.html' | prepend: site.url }}"><i class="bi bi-newspaper" title="Article" alt="Article"></i> by <i class="bi bi-folder-fill" title="Category" alt="Category"></i></a>
@@ -29,7 +29,7 @@ layout: default2.1
 <article class="blog-post">
   <h3 class="blog-post-title"><a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></h3>
   <p class="blog-post-meta">
-      <i class="bi bi-calendar3" title="Date Posted" alt="Date Posted"></i>
+      <i class="bi bi-calendar-date" title="Date Posted" alt="Date Posted"></i>
       {{ post.date | date: date_format }}&nbsp;
       {%- if post.author -%}
         {% for author in post.author %}
